@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llama-ces"
+version = "0.1.0"
+description = "Content Extraction Service for multi colun pdf pages"
+readme = "README.md"
+authors = [{name = "Arun Singh", email = "your@email.com"}]
+license = {text = "MIT"}
+dependencies = [
+   "python-dotenv",
+   "openai",
+   "pymupdf4llm",
+   "pdfplumber",
+   "llama-index",
+   "llama-index-embeddings-ollama"
+]
+
+[project.scripts]
+start-chat = "src.main:main"
+run-tests = "src.main:run_tests"
+
+[tool.setuptools]
+packages = ["src"]
